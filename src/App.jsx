@@ -2,7 +2,7 @@ import "./App.css"
 import Game from "./components/Game"
 import Header from "./components/Header"
 import Play from "./components/Play"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { HashRouter, Routes, Route } from "react-router-dom"
 import { useState } from "react"
 import styled from "styled-components"
 
@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <Container className="container">
-        <BrowserRouter>
+        <HashRouter basename={'/rock-paper-scissors-game'}>
           <Header score={score} />
           <Routes>
             <Route path="/" element={<Play setMyChoice={setMyChoice} />} />
@@ -30,7 +30,7 @@ function App() {
               }
             />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </Container>
     </>
   )
