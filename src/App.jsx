@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <Container className="container">
-        <HashRouter basename={'/rock-paper-scissors-game'}>
+        <HashRouter>
           <Header score={score} />
           <Routes>
             <Route path="/" element={<Play setMyChoice={setMyChoice} />} />
